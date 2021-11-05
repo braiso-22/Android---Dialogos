@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ListenerDialogFragment{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,4 +47,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onRadioDialogClick(String str) {
+        Toast.makeText(this, "Mensaje desde MainActivity: "+str, Toast.LENGTH_LONG).show();
+    }
 }
